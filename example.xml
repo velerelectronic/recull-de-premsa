@@ -33,14 +33,14 @@
       var lastDay = "";
       
       var row = 2;
-      while ((remDays>0) && (row<rows.length)) {
+      while ((remDays>=0) && (row<rows.length)) {
         var cols = rows[row].getElementsByTagName('td');
         var day = cols[0].textContent;
         if (day != lastDay) {
           lastDay = day;
           remDays--;
         }
-        if (remDays>0) {
+        if (remDays>=0) {
           var media = cols[1].textContent;
           var title = cols[2].textContent;
           var url = cols[3].textContent;
