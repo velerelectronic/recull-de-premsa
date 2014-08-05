@@ -22,7 +22,16 @@
       var hiddenSpan = document.getElementById('hiddenSpan');
       hiddenSpan.innerHTML = response.text;
       var table = hiddenSpan.getElementsByTagName('table')[0];
-      document.getElementById('contentDiv').innerHTML = table.innerHTML;
+      
+      var rows = table.getElementsByTagName('tr');
+      
+      var list = '<ol>';
+      for (var row=1; row<rows.length; row++) {
+        var cols = rows[row].getElementsByTagName('td');
+        list += '<li>' + cols[1] + '</li>';
+      }
+      list += '</ol>';
+      document.getElementById('contentDiv').innerHTML = list;
       
       gadgets.window.adjustHeight();
     };
