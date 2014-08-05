@@ -41,13 +41,16 @@
           lastDay = day;
           remDays--;
         }
-        var title = cols[2].textContent;
-        var url = cols[3].textContent;
-        list += '<li><a href="' + url + '">' + title + '</a></li>';
+        if (remDays>0) {
+          var title = cols[2].textContent;
+          var url = cols[3].textContent;
+          list += '<li style="font-size: small"><a href="' + url + '">' + title + '</a></li>';
         
-        row++;
+          row++;
+        }
       }
       list += '</ol>';
+      
       document.getElementById('contentDiv').innerHTML = list;
       
       gadgets.window.adjustHeight();
