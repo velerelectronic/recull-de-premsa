@@ -6,7 +6,7 @@
     <UserPref name="Days" display_name="Dies a mostrar" default_value="5" />
     <Content type="html">
     <![CDATA[
-    <div id="contentDiv"></div>
+    <div id="contentDiv">Carregant...</div>
     <span id="hiddenSpan" style="display:none">Hidden</span>
     <script type="text/javascript">
 
