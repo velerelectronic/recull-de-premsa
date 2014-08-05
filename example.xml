@@ -27,11 +27,24 @@
       
       var list = '<ol>';
 
-      for (var row=1; row<rows.length; row++) {
+      var prefs = new gadgets.Prefs();
+      var remDays = prefs.getInt("Days");
+
+      var days = 0;
+      var lastDay = "";
+      
+      var row = 1;
+      while ((remDays>0) && (row<rows.length)) {
         var cols = rows[row].getElementsByTagName('td');
+        var day = cols[0].textContent;
+        if (day != lastDay) {
+          remDays--;
+        }
         var title = cols[2].textContent;
         var url = cols[3].textContent;
         list += '<li><a href="' + url + '">' + title + '</a></li>';
+        
+        row++;
       }
       list += '</ol>';
       document.getElementById('contentDiv').innerHTML = list;
