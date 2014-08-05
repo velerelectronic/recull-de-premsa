@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-    <ModulePrefs title="Hello Example" />
+    <ModulePrefs title="Recull de premsa" />
     <UserPref name="Name" display_name="Your Name" default_value="World" />
     <Content type="html">
      <![CDATA[
