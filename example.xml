@@ -26,9 +26,12 @@
       var rows = table.getElementsByTagName('tr');
       
       var list = '<ol>';
+
       for (var row=1; row<rows.length; row++) {
         var cols = rows[row].getElementsByTagName('td');
-        list += '<li>' + cols[1].textContent + '</li>';
+        var title = cols[2].textContent;
+        var url = cols[3].textContent;
+        list += '<li><a href="' + url + '">' + title + '</a></li>';
       }
       list += '</ol>';
       document.getElementById('contentDiv').innerHTML = list;
