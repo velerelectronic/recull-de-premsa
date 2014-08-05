@@ -6,7 +6,20 @@
     <![CDATA[
     <div id="contentDiv"></div>
     <script type="text/javascript">
-    var href = "https://docs.google.com/spreadsheets/d/1Z1sec6V9kzxmrsG1UYOrKFRHhWiF6McZLfRqlS6DNlM/pubhtml";
+
+    function getHtml() {    
+      var parameters = {};  
+      parameters[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;  
+      var url = "https://docs.google.com/spreadsheets/d/1Z1sec6V9kzxmrsG1UYOrKFRHhWiF6McZLfRqlS6DNlM/pubhtml";
+      gadgets.io.makeRequest(url, processResponse, parameters);
+    };
+             
+    function processResponse(response) {  
+      document.getElementById('contentDiv').innerHTML = response.text;
+    };
+             
+    gadgets.util.registerOnLoadHandler(getHtml);
+
     </script>
     
     ]]>
