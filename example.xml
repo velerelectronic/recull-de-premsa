@@ -2,5 +2,13 @@
 <Module>
     <ModulePrefs title="Recull de premsa" />
     <UserPref name="Name" display_name="Your Name" default_value="World" />
-    <Content type="url" href="https://docs.google.com/spreadsheets/d/1Z1sec6V9kzxmrsG1UYOrKFRHhWiF6McZLfRqlS6DNlM/pubhtml"/>
+    <Content type="html">
+    <![CDATA[
+    <div id="contentDiv"></div>
+    <script type="text/javascript">
+    var href = "https://docs.google.com/spreadsheets/d/1Z1sec6V9kzxmrsG1UYOrKFRHhWiF6McZLfRqlS6DNlM/pubhtml";
+    </script>
+    
+    ]]>
+  </Content>
 </Module>
