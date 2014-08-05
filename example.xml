@@ -44,7 +44,7 @@
         if (remDays>0) {
           var title = cols[2].textContent;
           var url = cols[3].textContent;
-          list += '<li style="font-size: small"><a href="' + url + '">' + title + '</a></li>';
+          list += '<li style="font-size: small; margin-bottom: 1ex"><a href="' + url + '" style="text-decoration: none; color: black">' + title + '</a></li>';
         
           row++;
         }
