@@ -33,11 +33,12 @@
       var days = 0;
       var lastDay = "";
       
-      var row = 1;
+      var row = 2;
       while ((remDays>0) && (row<rows.length)) {
         var cols = rows[row].getElementsByTagName('td');
         var day = cols[0].textContent;
         if (day != lastDay) {
+          lastDay = day;
           remDays--;
         }
         var title = cols[2].textContent;
