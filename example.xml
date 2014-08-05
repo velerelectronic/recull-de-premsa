@@ -3,22 +3,27 @@
     <ModulePrefs title="Recull de premsa">
       <Require feature="dynamic-height" />
     </ModulePrefs>
-    <UserPref name="Name" display_name="Your Name" default_value="World" />
+    <UserPref name="Days" display_name="Dies a mostrar" default_value="5" />
     <Content type="html">
     <![CDATA[
     <div id="contentDiv"></div>
+    <span id="hiddenSpan" style="display:none">Hidden</span>
     <script type="text/javascript">
 
     function getHtml() {    
       var parameters = {};  
       parameters[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;  
-//      var url = "https://docs.google.com/spreadsheets/d/1Z1sec6V9kzxmrsG1UYOrKFRHhWiF6McZLfRqlS6DNlM/pubhtml";
-      var url = "https://script.google.com/macros/s/AKfycbwADN07ghIG9yE4BjNGr47SePGUbmt68stJvOgo-AjesFwh0XWh/exec";
+      var url = "https://docs.google.com/spreadsheets/d/1Z1sec6V9kzxmrsG1UYOrKFRHhWiF6McZLfRqlS6DNlM/pubhtml";
+//      var url = "https://script.google.com/macros/s/AKfycbwADN07ghIG9yE4BjNGr47SePGUbmt68stJvOgo-AjesFwh0XWh/exec";
       gadgets.io.makeRequest(url, processResponse, parameters);
     };
              
-    function processResponse(response) {  
-      document.getElementById('contentDiv').innerHTML = response.text;
+    function processResponse(response) {
+      var hiddenSpan = document.getElementById('hiddenSpan');
+      hiddenSpan.innerHTML = response.text;
+      var table = hiddenSpan.getElementsByTagName('table')[0];
+      document.getElementById('contentDiv').innerHTML = table.innerHTML;
+      
       gadgets.window.adjustHeight();
     };
              
