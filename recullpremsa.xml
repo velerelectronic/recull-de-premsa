@@ -44,7 +44,7 @@
           var media = cols[1].textContent;
           var title = cols[2].textContent;
           var url = cols[3].textContent;
-          list += '<li style="font-size: small; margin-bottom: 1ex"><a href="' + url + '" style="text-decoration: none; color: black">' + title + ' <span style="color: gray">(' + media + ', ' + day + ')</span></a></li>';
+          list += '<li style="font-size: small; margin-bottom: 1ex"><a href="' + url + '" style="text-decoration: none; color: black" target="_blank">' + title + ' <span style="color: gray">(' + media + ', ' + day + ')</span></a></li>';
         
           row++;
         }
